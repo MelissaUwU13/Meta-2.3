@@ -1,6 +1,7 @@
 <template>
-  <HelloWorld />
+  <AppHeader />
   <Tarjetas />
+  <Tabla />
   <AppFooter />
 </template>
 
