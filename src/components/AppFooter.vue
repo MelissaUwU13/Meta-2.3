@@ -4,6 +4,8 @@
 
       <v-col cols="12" md="4" sm="6">
         <v-btn class="boton" rounded="xl" size="x-large" href="https://www.viverosshangai.es/10-cosas-que-no-sabias-acerca-del-arbol-de-cerezo" target="_blank" block>Da click para mas informacion</v-btn>
+        <br></br>
+        <v-btn class="boton" @click.once="incrementarContador">Clickeado: {{ contador }}</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -44,3 +46,12 @@ border-radius: 80px;
 }
 
 </style>
+
+<script setup>
+import {ref} from 'vue'
+
+const contador = ref(0);
+const incrementarContador = () =>{
+  contador.value++;
+};
+</script>
