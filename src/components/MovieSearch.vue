@@ -1,0 +1,64 @@
+<template>
+  <v-card class="pa-4" elevation="4">
+    <h3 class="text-h5 mb-4 text-center">🔎 Buscar Películas</h3>
+
+    <v-form @submit.prevent="emitSearch">
+      <v-text-field
+        v-model="query"
+        label="Título de la película"
+        prepend-icon="mdi-movie-search"
+        required
+      />
+
+      <v-select
+        v-model="type"
+        :items="['movie', 'series', 'episode']"
+        label="Tipo"
+      />
+
+      <v-text-field
+        v-model="year"
+        label="Año (opcional)"
+        type="number"
+      />
+
+      <v-btn
+        color="primary"
+        class="mt-3 me-2"
+        @click="emitSearch"
+      >
+        Buscar
+      </v-btn>
+
+      <v-btn
+        color="secondary"
+        class="mt-3"
+        @click="emitClear"
+      >
+        Limpiar
+      </v-btn>
+    </v-form>
+  </v-card>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const query = ref('')
+const type = ref('movie')
+const year = ref('')
+
+const emit = defineEmits(['search-movies', 'clear-results'])
+
+const emitSearch = () => {
+  if (!query.value.trim()) return
+  emit('search-movies', { query: query.value, type: type.value, year: year.value })
+}
+
+const emitClear = () => {
+  query.value = ''
+  type.value = 'movie'
+  year.value = ''
+  emit('clear-results')
+}
+</script>

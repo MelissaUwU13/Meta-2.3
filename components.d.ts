@@ -10,11 +10,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    LoadingSpinner: typeof import('./src/components/LoadingSpinner.vue')['default']
+    MovieDetails: typeof import('./src/components/MovieDetails.vue')['default']
+    MovieList: typeof import('./src/components/MovieList.vue')['default']
+    MovieSearch: typeof import('./src/components/MovieSearch.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Tabla: typeof import('./src/components/Tabla.vue')['default']
-    Tarjetas: typeof import('./src/components/Tarjetas.vue')['default']
-    Texto: typeof import('./src/components/Texto.vue')['default']
-    Titulo: typeof import('./src/components/Titulo.vue')['default']
   }
 }
