@@ -1,6 +1,6 @@
 <template>
-  <v-card class="pa-4" elevation="3">
-    <h3 class="text-h5 mb-4 text-center">🎬 Resultados</h3>
+  <v-card class="pa-4" elevation="3" color="#637896" dark >
+    <h3 class="text-h5 mb-4 text-center titulo">🎬 Resultados</h3>
 
     <v-row>
       <v-col
@@ -47,4 +47,12 @@ const selectMovie = (id) => {
   transform: scale(1.02);
   transition: all 0.2s ease;
 }
+
+.titulo{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #dad8f4;
+  letter-spacing: 2px;
+}
+
 </style>

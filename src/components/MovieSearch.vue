@@ -1,12 +1,11 @@
 <template>
-  <v-card class="pa-4" elevation="4">
-    <h3 class="text-h5 mb-4 text-center">🔎 Buscar Películas</h3>
+  <v-card class="pa-4" elevation="4" color="#637896">
+    <h3 class="text-h5 mb-4 text-center titulo">🔎 Buscar Películas</h3>
 
     <v-form @submit.prevent="emitSearch">
       <v-text-field
         v-model="query"
         label="Título de la película"
-        prepend-icon="mdi-movie-search"
         required
       />
 
@@ -22,21 +21,13 @@
         type="number"
       />
 
-      <v-btn
-        color="primary"
-        class="mt-3 me-2"
-        @click="emitSearch"
-      >
-        Buscar
-      </v-btn>
+      <v-btn class="boton" @click="emitSearch">Buscar</v-btn>
 
-      <v-btn
-        color="secondary"
-        class="mt-3"
-        @click="emitClear"
-      >
-        Limpiar
-      </v-btn>
+      <br></br>
+      <br></br>
+
+      <v-btn class="boton" @click="emitClear">Limpiar</v-btn>
+
     </v-form>
   </v-card>
 </template>
@@ -62,3 +53,25 @@ const emitClear = () => {
   emit('clear-results')
 }
 </script>
+
+<style scoped>
+.titulo{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #dad8f4;
+  letter-spacing: 2px;
+}
+
+.boton {
+  color: white !important;
+  justify-content: center;
+  background-color: #274876 !important;
+  border-radius: 50px !important;
+  padding: 10px 24px !important;
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #3d70b7 !important;
+}
+</style>

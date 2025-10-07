@@ -1,8 +1,9 @@
 <template>
-      <v-container class="pa-8">
+  <div class="fondo-app">
+      <v-container class="pa-8 contenido-app">
         <v-row>
           <v-col cols="12">
-            <h1 class="text-h3 mb-6 text-center">🎬 Buscador de Películas</h1>
+            <h1 class="titulo-pelis">🎬 Buscador de Películas</h1>
           </v-col>
         </v-row>
 
@@ -39,7 +40,8 @@
           </v-col>
         </v-row>
       </v-container>
-    </template>
+  </div>
+  </template>
 
 <script setup>
 import { ref } from 'vue'
@@ -96,3 +98,21 @@ const handleClear = () => {
   error.value = ''
 }
 </script>
+
+<style scoped>
+.fondo-app {
+  background-image: linear-gradient(rgba(15, 15, 30, 0.7), rgba(0, 0, 0, 0.8)), url("/pelis.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+}
+
+.titulo-pelis {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 15px #00b4d8;
+  letter-spacing: 2px;
+}
+</style>

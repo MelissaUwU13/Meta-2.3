@@ -1,7 +1,7 @@
 <template>
-  <v-dialog v-model="dialog" max-width="800px" persistent>
+  <v-dialog v-model="dialog" max-width="800px" color="red" persistent >
     <v-card>
-      <v-toolbar color="primary" dark>
+      <v-toolbar color="#0C0F6B" dark>
         <v-toolbar-title>{{ movie.Title }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon @click="closeDetails">
@@ -22,10 +22,15 @@
 
             <v-col cols="12" md="8">
               <p><strong>Año:</strong> {{ movie.Year }}</p>
+              <br>
               <p><strong>Género:</strong> {{ movie.Genre }}</p>
+              <br>
               <p><strong>Director:</strong> {{ movie.Director }}</p>
+              <br>
               <p><strong>Actores:</strong> {{ movie.Actors }}</p>
+              <br>
               <p><strong>Calificación IMDB:</strong> {{ movie.imdbRating }}</p>
+              <br>
               <p><strong>Sinopsis:</strong> {{ movie.Plot }}</p>
             </v-col>
           </v-row>
@@ -53,7 +58,6 @@ const closeDetails = () => {
   emit('close-details')
 }
 
-// Cierra el diálogo si el prop cambia a null
 watch(() => props.movie, (newVal) => {
   dialog.value = !!newVal
 })
